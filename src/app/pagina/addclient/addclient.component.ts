@@ -7,7 +7,7 @@ import { LocalStorageService } from 'src/app/local-storage.service';
   styleUrls: ['./addclient.component.scss'],
 })
 export class AddclientComponent implements OnInit {
-  contacts: any = localStorage.getItem('user') || [{}];
+  contacts: Array<Object> = JSON.parse(localStorage.getItem('user') || '[{}]');
   year: string = '';
   name: String = '';
   cpf: String = '';
@@ -30,7 +30,7 @@ export class AddclientComponent implements OnInit {
     this.showErrorMessage = false;
 
     if (this.id !== 0) {
-      this.contacts = this.LocalStorageService.get('user');
+      this.contacts = JSON.parse(localStorage.getItem('user') || '[{}]');
     }
     const object = {
       year: this.year,

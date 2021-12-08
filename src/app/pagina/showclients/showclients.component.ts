@@ -8,7 +8,7 @@ import { LocalStorageService } from '../../local-storage.service';
 })
 export class ShowclientsComponent implements OnInit {
 
-  userData: any = localStorage.getItem('user') || [{}];
+  userData: Object[] = JSON.parse(localStorage.getItem('user') || '[{}]');
 
   constructor( public LocalStorageService: LocalStorageService ) {
     this.LocalStorageService 
@@ -16,13 +16,13 @@ export class ShowclientsComponent implements OnInit {
 
   ngOnInit(): void {}
   
-  remove(contactIndex) {
+  remove(contact) {
     this.userData.forEach(element => {
-      if (element.id === contactIndex){
+      if (element === contact){
         this.userData.splice(this.userData.indexOf(element), 1)
       }
     });
 
-    localStorage.setItem('user', this.userData);
+    localStorage.setItem('user', JSON.stringify(this.userData));
   }
 }
