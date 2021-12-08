@@ -8,7 +8,7 @@ import { LocalStorageService } from '../../local-storage.service';
 })
 export class ShowclientsComponent implements OnInit {
 
-  userData = this.LocalStorageService.get('user');
+  userData: any = localStorage.getItem('user') || [{}];
 
   constructor( public LocalStorageService: LocalStorageService ) {
     this.LocalStorageService 
@@ -23,6 +23,6 @@ export class ShowclientsComponent implements OnInit {
       }
     });
 
-    this.LocalStorageService.set('user', this.userData);
+    localStorage.setItem('user', this.userData);
   }
 }
