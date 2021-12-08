@@ -1,0 +1,48 @@
+<div class="component">
+  <h1>Adicionar contato</h1>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nome"
+      aria-describedby="basic-addon1"
+      [(ngModel)]="name"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Idade"
+      aria-describedby="basic-addon2"
+      [(ngModel)]="year"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="CPF"
+      aria-describedby="basic-addon3"
+      [(ngModel)]="cpf"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Telefone"
+      aria-label="basic-addon3"
+      [(ngModel)]="telephone"
+    />
+  </div>
+  <ng-container *ngIf="showErrorMessage === true">
+    <p style="color: red;">Preencha todos os campos</p>
+  </ng-container>
+  <button (click)="handleForm()" type="button" class="btn btn-success">
+    Cadastrar
+  </button>
+</div>

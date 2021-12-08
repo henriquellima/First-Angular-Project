@@ -1,0 +1,34 @@
+<div class="component">
+  <h1 class="title">Contatos</h1>
+
+  <ng-container *ngIf="userData.length !== 0">
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Telefone</th>
+        <th>CPF</th>
+      </tr>
+      <tr [ngClass]="{ minor: !item.major }" *ngFor="let item of userData">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.year }}</td>
+        <td>{{ item.telephone }}</td>
+        <td>{{ item.cpf }}</td>
+        <td class="btn btn-danger" style="margin: 3px;" (click)="remove(item.id)">X</td>
+      </tr>
+    </table>
+  </ng-container>
+
+  <ng-container *ngIf="userData.length === 0">
+    <p>Nenhum contato adicionado!</p>
+    <a
+      style="font-size: 20px"
+      class="nav-link"
+      routerLinkActive="active"
+      routerLink="/addclient"
+      >Clique e adicione</a
+    >
+  </ng-container>
+</div>

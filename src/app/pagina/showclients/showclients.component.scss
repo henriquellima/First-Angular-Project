@@ -1,0 +1,19 @@
+.component {
+  padding: 50px 100px 50px 100px;
+
+  text-align: center;
+
+  min-height: 70vh;
+
+  .title {
+    margin-bottom: 60px;
+  }
+
+  .minor {
+    height: 20px;
+    background-image: url(https://images.emojiterra.com/google/android-11/512px/1f51e.png);
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+}
